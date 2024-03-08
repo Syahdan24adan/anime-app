@@ -2,8 +2,8 @@ import Link from 'next/link'
 
 const Header = ({ title, linkHref, linkTitle }) => {
     return (
-        <div className="flex py-4 justify-between px-4 items-center">
-            <h1 className="text-white font-bold text-xl py-4 ">{title}</h1>
+        <div className="py-4 justify-between px-4 items-center">
+            <h1 className="text-white font-bold text-2xl py-4 text-center">{title}</h1>
             <Link
                 href={linkHref}
                 className="

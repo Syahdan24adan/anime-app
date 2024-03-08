@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 const AnimeList = ({ api }) => {
     return (
-        <div className="grid md:grid-cols-8 sm:grid-cols-4 grid-cols-3 gap-4 gap-y-7 px-2 py-5">
+        <div className="grid md:grid-cols-8 sm:grid-cols-4 grid-cols-3 gap-4 gap-y-7 px-2 py-2">
             {api.data?.map((anime, index) => {
                 const limitedTitle = anime.title.length > 35 ? anime.title.substring(0, 35) : anime.title
                 return (

@@ -6,16 +6,18 @@ import { getAnimeResponse } from "./libs/api-libs";
 const Page = async () => {
 
   const topAnime = await getAnimeResponse("top/anime", "limit=8");
-
-  const response2 = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/anime/{id}/news`);
-  const newAnime = await response2.json();
+  const anime = await getAnimeResponse(`top/manga/`, "limit=8")
 
   return (
     <>
     {/*Anime Paling Populer*/}
       <section>
-        <Header title={"PALING POPULER"} linkTitle={"LIHAT SEMUA>>"} linkHref={"/populer"} />
+        <Header title={"PALING POPULER"} linkTitle={""} linkHref={"/populer"} />
         <AnimeList api={topAnime} />
+
+        <Header title={"MANGA"} linkTitle={""} linkHref={"/manga"} />
+        <AnimeList api={anime} />
+        
       </section>
     </>
   );
